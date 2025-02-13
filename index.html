@@ -12,7 +12,7 @@
     <div class="container">
         <h1>Will you be my Valentine? 💖</h1>
         <div class="buttons">
-            <button class="yes-button" onclick="handleYesClick()">Yes 💘</button>
+            <button class="yes-button" onclick="event.preventDefault(); handleYesClick()">Yes 💘</button>
             <button class="no-button" onmouseover="moveNoButton()">No 💔</button>
         </div>
         <div class="gif_container">
