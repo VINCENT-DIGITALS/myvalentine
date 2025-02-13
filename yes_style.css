@@ -1,33 +1,149 @@
+/* Background with a glowing effect */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    background: radial-gradient(circle, #ff758c, #ff7eb3);
     font-family: 'Arial', sans-serif;
     text-align: center;
     overflow: hidden;
-}
-
-.container {
+    animation: glow 2s infinite alternate;
+  }
+  
+  /* Smooth glowing animation */
+  @keyframes glow {
+    from { background: radial-gradient(circle, #ff758c, #ff5e6c); }
+    to { background: radial-gradient(circle, #ff7eb3, #ff3e6b); }
+  }
+  
+  .container {
     text-align: center;
     background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    animation: popIn 1s ease-in-out;
-}
-
-.header_text {
-    font-size: 3em;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Smooth fade-in animation */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  h1 {
+    font-size: 2.5em;
     color: #d32f2f;
-    animation: bounce 1.5s infinite alternate;
-}
-
-.gif_container img {
-    width: 100%;
-    max-width: 500px;
+  }
+  
+  /* Buttons */
+  .buttons {
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  button {
+    font-size: 1.5em;
+    padding: 12px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .yes-button {
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .yes-button:hover {
+    transform: scale(1.2);
+    background-color: #45a049;
+  }
+  
+  /* "No" Button moves away */
+  .no-button {
+    background-color: #f44336;
+    color: white;
+    position: absolute;
+  }
+  
+  .no-button:hover {
+    transform: scale(0.8);
+  }
+  
+  /* GIF container */
+  .gif_container img {
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
-}
+    margin-top: 20px;
+  }
+  
+  /* Floating hearts animation */
+  @keyframes floatingHearts {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+  }
+  
+  .heart {
+    position: absolute;
+    font-size: 2rem;
+    color: red;
+    animation: floatingHearts 5s linear infinite;
+  }
+  
+  /* Confetti */
+  .confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    opacity: 0.7;
+    border-radius: 50%;
+    animation: confetti-fall 3s linear infinite;
+  }
+  
+  @keyframes confetti-fall {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+  
+  
+  /* Funny rejection messages */
+  .funny-message {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #d32f2f;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeInOut 1.5s ease-in-out;
+  }
+  
+  /* Pleading GIFs */
+  .pleading-gif {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: auto;
+    animation: fadeInOut 3s ease-in-out;
+  }
+  
+  /* Fade in & out animation */
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(10px); }
+    50% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+  }
+  

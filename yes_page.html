@@ -3,15 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Knew you would say yes! ❤️</title>
-    <link rel="stylesheet" href="yes_style.css">
+    <title>Knew you would say yes!</title>
+    <link rel="stylesheet" href="./yes_style.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="header_text">hehehe thank you baby! ❤️😍</h1>
+        <h1 class="header_text">Mwah mwahh mwahhhh!</h1>
         <div class="gif_container">
-            <img src="https://media4.giphy.com/media/9XY4f3FgFTT4QlaYqa/giphy.gif">
+            <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Celebration GIF">
         </div>
     </div>
+    <script>
+      /* Creates floating hearts */
+      function createHearts() {
+        for (let i = 0; i < 15; i++) {
+            let heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 5000);
+        }
+    }
+
+     /* Simulates confetti effect */
+     function showConfetti() {
+        for (let i = 0; i < 50; i++) {
+            let confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.top = `-10px`;
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            confetti.style.animationDuration = `${1 + Math.random() * 2}s`;
+            document.body.appendChild(confetti);
+
+            setTimeout(() => confetti.remove(), 3000);
+        }
+    }
+
+        // Trigger effects when the page loads
+        window.onload = () => {
+            createHearts();
+            showConfetti();
+        };
+    </script>
 </body>
 </html>
